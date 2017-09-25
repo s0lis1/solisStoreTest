@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule }   from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ProductComponent } from './components/products/product.component'
@@ -15,7 +16,7 @@ import { HttpModule } from '@angular/http';
     AppComponent, ProductComponent
   ],
   imports: [
-    BrowserModule, HttpModule, RouterModule.forRoot([
+    BrowserModule,ReactiveFormsModule, FormsModule,HttpModule, RouterModule.forRoot([
 			
 			{ path: 'product', component: ProductComponent }
 		])

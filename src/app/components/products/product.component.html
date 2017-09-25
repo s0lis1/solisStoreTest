@@ -1,3 +1,18 @@
-<div *ngFor="let item of productList; let i = index">
+<div *ngFor="let item of productList;" (click)=onSelectesProduct(item)>
     {{item.description}}
 </div>
+<div>
+        <button (click)=getProductById()>obtener descripcion</button>
+</div>
+<div *ngIf="productList2">  {{productList2.description}}</div>
+
+<div *ngIf="productSelected">
+
+<h2>{{productSelected.description}} details!</h2>
+<div><label>id: </label>{{productSelected.id}}</div>
+<div>
+    <label>name: </label>
+    <input [(ngModel)]="productSelected.description" placeholder="description"/>
+</div>
+</div>
+<button (click)=uodateProduct()>actualizar</button>

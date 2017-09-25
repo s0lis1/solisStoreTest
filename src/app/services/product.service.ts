@@ -17,4 +17,18 @@ export class ProductService{
         let url: string =  `${PROTOCOL}://${SERVER_NAME}:${SERVER_PORT}/api/products/`;
         return this.httpService.get(url);
     }
+
+    getProductById(id:number){
+        let url: string =  `${PROTOCOL}://${SERVER_NAME}:${SERVER_PORT}/api/products/`+id;
+        return this.httpService.get(url);
+    }
+    updateProduct(product:Product){
+        let url: string =  `${PROTOCOL}://${SERVER_NAME}:${SERVER_PORT}/api/products/`;
+        let dataToSend =  {
+				id: product.id,
+                description: product.description
+            };
+            console.log(dataToSend);
+        return this.httpService.post(url,dataToSend);
+    }
 }
