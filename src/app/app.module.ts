@@ -17,8 +17,7 @@ import { HttpModule } from '@angular/http';
   ],
   imports: [
     BrowserModule,ReactiveFormsModule, FormsModule,HttpModule, RouterModule.forRoot([
-			
-			{ path: 'product', component: ProductComponent }
+			{ path: 'products', component: ProductComponent }
 		])
   ],
   providers: [ HttpService, ProductService],
